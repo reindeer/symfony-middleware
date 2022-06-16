@@ -1,8 +1,7 @@
 {
     "name": "tarandro/symfony-middleware",
     "description": "Middleware support for symfony",
-    "version": "1.0.0",
-    "keywords": [],
+    "keywords": ["symfony", "middleware", "psr-15"],
     "type": "symfony-bundle",
     "license": "MIT",
     "require": {
