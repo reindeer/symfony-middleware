@@ -1,7 +1,11 @@
 {
     "name": "tarandro/symfony-middleware",
     "description": "Middleware support for symfony",
-    "keywords": ["symfony", "middleware", "psr-15"],
+    "keywords": [
+        "symfony",
+        "middleware",
+        "psr-15"
+    ],
     "type": "symfony-bundle",
     "license": "MIT",
     "require": {
@@ -10,8 +14,7 @@
         "symfony/dependency-injection": ">=5.3",
         "symfony/http-kernel": ">=5.3",
         "symfony/routing": ">=5.3"
-    }
-    ,
+    },
     "require-dev": {
         "roave/security-advisories": "dev-latest"
     },
