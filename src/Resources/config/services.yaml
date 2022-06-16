@@ -1,0 +1,16 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+
+  Tarandro\SymfonyMiddleware\EventSubscriber\MiddlewareSubscriber:
+    arguments:
+      $middlewareList: !tagged_iterator { tag: 'tarandro_middleware', index_by: 'alias' }
+    tags:
+      - { name: 'kernel.event_subscriber' }
+
+  Tarandro\SymfonyMiddleware\Contracts\RequestHandlerInterface: '@Tarandro\SymfonyMiddleware\Middleware\RequestHandler'
+  Tarandro\SymfonyMiddleware\Middleware\RequestHandler: ~
+
+  Tarandro\SymfonyMiddleware\Contracts\ResponseInterface: '@Symfony\Component\HttpFoundation\Response'
+  Tarandro\SymfonyMiddleware\Contracts\RequestInterface: '@Symfony\Component\HttpFoundation\Request'
