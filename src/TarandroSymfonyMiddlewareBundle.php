@@ -1,9 +1,9 @@
 <?php
 
-namespace Tarandro\SymfonyMiddleware;
+namespace Reindeer\SymfonyMiddleware;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class TarandroSymfonyMiddlewareBundle extends Bundle
+class ReindeerSymfonyMiddlewareBundle extends Bundle
 {
 }

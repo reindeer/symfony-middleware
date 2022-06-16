@@ -3,14 +3,14 @@ services:
     autowire: true
     autoconfigure: true
 
-  Tarandro\SymfonyMiddleware\EventSubscriber\MiddlewareSubscriber:
+  Reindeer\SymfonyMiddleware\EventSubscriber\MiddlewareSubscriber:
     arguments:
-      $middlewareList: !tagged_iterator { tag: 'tarandro_middleware', index_by: 'alias' }
+      $middlewareList: !tagged_iterator { tag: 'reindeer_middleware', index_by: 'alias' }
     tags:
       - { name: 'kernel.event_subscriber' }
 
-  Tarandro\SymfonyMiddleware\Contracts\RequestHandlerInterface: '@Tarandro\SymfonyMiddleware\Middleware\RequestHandler'
-  Tarandro\SymfonyMiddleware\Middleware\RequestHandler: ~
+  Reindeer\SymfonyMiddleware\Contracts\RequestHandlerInterface: '@Reindeer\SymfonyMiddleware\Middleware\RequestHandler'
+  Reindeer\SymfonyMiddleware\Middleware\RequestHandler: ~
 
-  Tarandro\SymfonyMiddleware\Contracts\ResponseInterface: '@Symfony\Component\HttpFoundation\Response'
-  Tarandro\SymfonyMiddleware\Contracts\RequestInterface: '@Symfony\Component\HttpFoundation\Request'
+  Reindeer\SymfonyMiddleware\Contracts\ResponseInterface: '@Symfony\Component\HttpFoundation\Response'
+  Reindeer\SymfonyMiddleware\Contracts\RequestInterface: '@Symfony\Component\HttpFoundation\Request'

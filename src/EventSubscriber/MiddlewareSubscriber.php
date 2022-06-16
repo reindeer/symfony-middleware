@@ -1,6 +1,6 @@
 <?php
 
-namespace Tarandro\SymfonyMiddleware\EventSubscriber;
+namespace Reindeer\SymfonyMiddleware\EventSubscriber;
 
 use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
@@ -8,8 +8,8 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Event\ControllerArgumentsEvent;
 use Symfony\Component\HttpKernel\KernelEvents;
 use Symfony\Component\Routing\RouterInterface;
-use Tarandro\SymfonyMiddleware\Contracts\MiddlewareInterface;
-use Tarandro\SymfonyMiddleware\Middleware\RequestHandler;
+use Reindeer\SymfonyMiddleware\Contracts\MiddlewareInterface;
+use Reindeer\SymfonyMiddleware\Middleware\RequestHandler;
 
 class MiddlewareSubscriber implements EventSubscriberInterface
 {

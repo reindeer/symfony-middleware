@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Tarandro\SymfonyMiddleware\DependencyInjection;
+namespace Reindeer\SymfonyMiddleware\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 
 final class Configuration implements ConfigurationInterface
 {
-    public const CONFIG_NAME = 'tarandro_symfony_middleware';
+    public const CONFIG_NAME = 'reindeer_symfony_middleware';
 
     public function __construct(
         protected TreeBuilder $builder,

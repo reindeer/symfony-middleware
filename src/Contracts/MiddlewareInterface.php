@@ -1,6 +1,6 @@
 <?php
 
-namespace Tarandro\SymfonyMiddleware\Contracts;
+namespace Reindeer\SymfonyMiddleware\Contracts;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;

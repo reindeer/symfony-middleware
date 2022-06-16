@@ -7,12 +7,12 @@ This bundle provides PSR-15-like middlewares in Symfony. Unlike PSR-15 it uses c
 ## Installation
 
 ```bash
-composer require tarandro/symfony-middleware
+composer require reindeer/symfony-middleware
 ```
 
 ## Usage
 
-Each middleware must implement the `Tarandro\SymfonyMiddleware\Contracts\MiddlewareInterface`.
+Each middleware must implement the `Reindeer\SymfonyMiddleware\Contracts\MiddlewareInterface`.
 This interface is very similar to `Psr\Http\Server\MiddlewareInterface`
 but uses `Symfony\Component\HttpFoundation\Request` and `Symfony\Component\HttpFoundation\Response` instead of
 `Psr\Http\Message\RequestInterface` and `Psr\Http\Message\ResponseInterface` respectively.
@@ -29,8 +29,8 @@ Let's create a middleware which authentication checks:
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Tarandro\SymfonyMiddleware\Contracts\MiddlewareInterface;
-use Tarandro\SymfonyMiddleware\Contracts\RequestHandlerInterface;
+use Reindeer\SymfonyMiddleware\Contracts\MiddlewareInterface;
+use Reindeer\SymfonyMiddleware\Contracts\RequestHandlerInterface;
 
 class CheckDeposit implements MiddlewareInterface
 {
@@ -88,8 +88,8 @@ collection:
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException;
-use Tarandro\SymfonyMiddleware\Contracts\MiddlewareInterface;
-use Tarandro\SymfonyMiddleware\Contracts\RequestHandlerInterface;
+use Reindeer\SymfonyMiddleware\Contracts\MiddlewareInterface;
+use Reindeer\SymfonyMiddleware\Contracts\RequestHandlerInterface;
 
 class CheckDeposit implements MiddlewareInterface
 {
@@ -116,8 +116,8 @@ class CheckDeposit implements MiddlewareInterface
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Tarandro\SymfonyMiddleware\Contracts\MiddlewareInterface;
-use Tarandro\SymfonyMiddleware\Contracts\RequestHandlerInterface;
+use Reindeer\SymfonyMiddleware\Contracts\MiddlewareInterface;
+use Reindeer\SymfonyMiddleware\Contracts\RequestHandlerInterface;
 
 class CheckDeposit implements MiddlewareInterface
 {

@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace Tarandro\SymfonyMiddleware\DependencyInjection;
+namespace Reindeer\SymfonyMiddleware\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\PrependExtensionInterface;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
-use Tarandro\SymfonyMiddleware\Contracts\MiddlewareInterface;
+use Reindeer\SymfonyMiddleware\Contracts\MiddlewareInterface;
 
-class TarandroSymfonyMiddlewareExtension extends Extension implements PrependExtensionInterface
+class ReindeerSymfonyMiddlewareExtension extends Extension implements PrependExtensionInterface
 {
     /**
      * @inheritdoc
@@ -30,7 +30,7 @@ class TarandroSymfonyMiddlewareExtension extends Extension implements PrependExt
         $loader = new YamlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
         $loader->load('services.yaml');
 
-        $container->registerForAutoconfiguration(MiddlewareInterface::class)->addTag('tarandro_middleware');
+        $container->registerForAutoconfiguration(MiddlewareInterface::class)->addTag('reindeer_middleware');
     }
 
     public function getAlias(): string
