@@ -42,13 +42,12 @@ class MiddlewareSubscriber implements EventSubscriberInterface
     public function onControllerArguments(ControllerArgumentsEvent $event): void
     {
         $routeMiddlewares = array_map(
-            static fn (string $middlewareName) => $this->getMiddlewareByName($middlewareName),
+            fn (string $middlewareName) => $this->getMiddlewareByName($middlewareName),
             $this->getRouteMiddlewares($event->getRequest()),
         );
 
         if ($routeMiddlewares) {
             $controller = $event->getController();
-            $initialArguments = $event->getArguments();
 
             $attributes = $this->getControllerArguments($event->getRequest()->get('_controller'));
             $getRequestArguments = static fn (Request $request) => array_map(
@@ -59,7 +58,7 @@ class MiddlewareSubscriber implements EventSubscriberInterface
             $chain = array_reduce(
                 array_reverse($routeMiddlewares),
                 static fn (\Closure $chain, MiddlewareInterface $middleware): \Closure => static fn (Request $request) => $middleware->process($request, new RequestHandler($chain)),
-                static fn (Request $request) => $controller(...($request === $event->getRequest() ? $initialArguments : $getRequestArguments($request))),
+                static fn (Request $request) => $controller(...$getRequestArguments($request)),
             );
 
             $event->setController(static fn () => $chain($event->getRequest()));
